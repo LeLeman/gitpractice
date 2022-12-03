@@ -19,6 +19,15 @@ jobs:
    - name: Print Hello Message in testing
      run: echo "Hello World From Testing!"
      
+   - name: Show what we files we got
+     run: ls -lG
+     
+   - name: Clone the repositore
+     run: actions/checkout@v1
+     
+   - name: Show what we files we got
+     run: ls -lG
+     
    - name: Execare few commands
      run: |
         echo "Hello Message1"
