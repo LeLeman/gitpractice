@@ -23,7 +23,7 @@ jobs:
      run: ls -lG
      
    - name: Clone the repositore
-     run: actions/checkout@v1
+     run: actions/checkout@v3
      
    - name: Show what we files we got
      run: ls -lG
