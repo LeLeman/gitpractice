@@ -8,13 +8,18 @@ on:
 jobs:
 
   my_testing:
+   
    runs-on: ubuntu-18.04
+   
    steps: 
-   - name: Print Hello Message
+   - name: Print Hello Message in testing
      run: echo "Hello World From Testing!"
   
   my_deploy:
+    
     runs-on: macos-10.15
+    needs: [my_testing]
+    
     steps:
-     - name: Print Hello Message
+     - name: Print Hello Message in deploy
        run: echo "Hello World From Deploy!"
