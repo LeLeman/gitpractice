@@ -38,10 +38,21 @@ jobs:
     
     runs-on: macos-10.15
     needs: [my_testing]
+    env: 
+       VAR1 : "My job level variable number 1"
+       VAR2 : "My job level variable number 2"
     
     steps:
      - name: Print Hello Message in deploy
        run: echo "Hello World From Deploy!" 
+       
+     - name: Print my job variable
+       run: |
+          echo "var 1 = ${{ env.VAR1 }}"
+          echo "var 2 = ${{ env.VAR2 }}"
+          echo "local var = $LOCAL_VAR"
+       env: 
+          LOCAL_VAR: "My local level variable 1"
        
      - name: Printing deploy package 
        run: echo "Deploy package is ${{ env.DEPLOY_PACKAGE_NAME }}"
@@ -50,4 +61,4 @@ jobs:
        run: aws --version
        
      - name: Lets test some packeage if they are here 2
-       run: zip
+       run: zip --version
