@@ -1,0 +1,20 @@
+name: My-GitHub-Basics
+
+on: 
+  push:
+    branches:
+      - main
+    
+jobs:
+
+  my_testing:
+   runs-on: ubuntu-18.04
+   steps: 
+   - name: Print Hello Message
+     run: echo "Hello World From Testing!"
+  
+  my_deploy:
+    runs-on: macos-10.15
+    steps:
+     - name: Print Hello Message
+       run: echo "Hello World From Deploy!"
