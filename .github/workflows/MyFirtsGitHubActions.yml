@@ -1,6 +1,6 @@
 name: My-GitHub-Basics
 
- env: 
+env: 
   APPLICATION_NAME    : "My flask"
   DEPLOY_PACKAGE_NAME : "deploy-package-file-ver-${{ github.sha }}"
 
