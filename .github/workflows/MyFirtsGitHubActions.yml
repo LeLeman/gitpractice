@@ -1,5 +1,9 @@
 name: My-GitHub-Basics
 
+ env: 
+  APPLICATION_NAME    : "My flask"
+  DEPLOY_PACKAGE_NAME : "deploy-package-file-ver-${{ github.sha }}"
+
 on: 
   push:
     branches:
@@ -14,6 +18,12 @@ jobs:
    steps: 
    - name: Print Hello Message in testing
      run: echo "Hello World From Testing!"
+     
+   -name: Execare few commands
+     run: |
+        echo "Hello Message1"
+        echo "Hello Message2"
+        echo "Application name: ${{ env.APPLICATION_NAME }}"
   
   my_deploy:
     
@@ -22,4 +32,7 @@ jobs:
     
     steps:
      - name: Print Hello Message in deploy
-       run: echo "Hello World From Deploy!"
+       run: echo "Hello World From Deploy!" 
+       
+     - name: Printing deploy package 
+       run: echo "Deploy pachage file: ${{ env.DEPLOY_PACKAGE_NAME }}"      
