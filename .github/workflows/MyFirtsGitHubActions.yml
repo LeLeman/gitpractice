@@ -19,7 +19,7 @@ jobs:
    - name: Print Hello Message in testing
      run: echo "Hello World From Testing!"
      
-   -name: Execare few commands
+   - name: Execare few commands
      run: |
         echo "Hello Message1"
         echo "Hello Message2"
@@ -35,4 +35,4 @@ jobs:
        run: echo "Hello World From Deploy!" 
        
      - name: Printing deploy package 
-       run: echo "Deploy pachage file: ${{ env.DEPLOY_PACKAGE_NAME }}"      
+       run: echo "Deploy package is ${{ env.DEPLOY_PACKAGE_NAME }}"    
